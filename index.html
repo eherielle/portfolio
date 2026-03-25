@@ -92,9 +92,11 @@ nav.scrolled{background:rgba(13,17,23,0.96);backdrop-filter:blur(16px);border-bo
 .hero-center{max-width:760px;padding:8rem 0 5rem 6rem !important}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:0.12s}.reveal-delay-2{transition-delay:0.22s}.reveal-delay-3{transition-delay:0.32s}.reveal-delay-4{transition-delay:0.42s}
+
+#about,#services,#work,#skills,#contact{scroll-margin-top:80px}
 
 /* ABOUT */
 #about{background:var(--off-white);padding:9rem 0}
@@ -334,7 +336,7 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
         </div>
         <div class="case-body">
           <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>The supply chain team was the go-to for three other departments, but there was no central place for requests to live. Teams sent chat messages, mentioned things in meetings, or followed up verbally. Everything was scattered. People had no visibility into where things stood unless someone remembered to follow up.</p></div></div>
-          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>I designed and built a centralized intake system with a submission form and a tracking dashboard. The system handles production orders, inventory replenishment, barcode requests, and SKU code generation — the last of which is fully agentic. Notifications are automated at key process points.</p></div></div>
+          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>I designed and built a centralized intake system with a submission form and a tracking dashboard. The system handles production orders, inventory replenishment, barcode requests, and SKU code generation. The last one is fully agentic. Notifications go out automatically at the right points in the process.</p></div></div>
           <div><p class="case-body-label">The result</p><div class="case-body-text"><p>Four departments now use the system daily. Requests have a proper home. Anyone can check status without asking anyone. Manual group chat updates are gone. The supply chain team got back the time they were spending on follow-ups, and the requesting teams got the visibility they didn't have before.</p></div></div>
           <div class="case-tags"><span class="case-tag">n8n</span><span class="case-tag">Airtable</span><span class="case-tag">Lovable</span><span class="case-tag">Supabase</span><span class="case-tag">Process design</span><span class="case-tag">AI-assisted automation</span></div>
         </div>
@@ -350,8 +352,8 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
           <div class="case-icon">+</div>
         </div>
         <div class="case-body">
-          <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>Knowing stock levels meant checking the Amazon seller account, vendor warehouse, production units, and multiple shipment stages — manually, across multiple brands, then consolidated into a spreadsheet. Multiple people spent recurring time on data that was outdated by the time they finished.</p></div></div>
-          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>I built an automated dashboard pulling from all four data sources daily. Before building, I discovered data inconsistencies in one source and cleaned those up first — getting the data right before automating it was the more important step. Rollout was done one brand at a time to validate accuracy.</p></div></div>
+          <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>Knowing stock levels meant checking the Amazon seller account, vendor warehouse, production units, and multiple shipment stages. All of it pulled manually, across multiple brands, then consolidated into a spreadsheet. Multiple people spent recurring time on data that was outdated by the time they finished.</p></div></div>
+          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>I built an automated dashboard pulling from all four data sources daily. Before building, I discovered data inconsistencies in one source and cleaned those up first. Getting the data right mattered more than the automation itself. Rollout was done one brand at a time to validate accuracy.</p></div></div>
           <div><p class="case-body-label">The result</p><div class="case-body-text"><p>A single dashboard that updates itself daily. What required multiple people and manual checks is now just there every morning. Recurring manual work removed from several people's plates. Inventory decisions now made on current data.</p></div></div>
           <div class="case-tags"><span class="case-tag">n8n</span><span class="case-tag">Amazon API</span><span class="case-tag">Vendor warehouse API</span><span class="case-tag">Airtable</span><span class="case-tag">API integration</span><span class="case-tag">Data cleanup</span></div>
         </div>
@@ -367,9 +369,9 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
           <div class="case-icon">+</div>
         </div>
         <div class="case-body">
-          <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>The content team needed a way to go from a trending TikTok video to a ready-to-use creative brief. An initial workflow existed but wasn't working reliably — too many things happening in one place. It needed significant rework before the team could actually use it.</p></div></div>
+          <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>The content team needed a way to go from a trending TikTok video to a ready-to-use creative brief. An initial workflow existed but wasn't working reliably. Too many things were happening in one place. It needed significant rework before the team could actually use it.</p></div></div>
           <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>I rebuilt it as three focused pipelines: video analysis using multiple AI models simultaneously, brief generation with defined content strategies and hooks, and brief delivery with automated notifications. Each pipeline does one thing well and feeds into the next.</p></div></div>
-          <div><p class="case-body-label">The result</p><div class="case-body-text"><p>The pipeline is live and the team uses it. What started as a vision is now working infrastructure. Content creators get structured, data-informed briefs without waiting on anyone to pull it together manually.</p></div></div>
+          <div><p class="case-body-label">The result</p><div class="case-body-text"><p>The pipeline is live and the team uses it. What started as a vision is now working infrastructure. Content creators get structured briefs based on real video data, without waiting on anyone to pull it together.</p></div></div>
           <div class="case-tags"><span class="case-tag">n8n</span><span class="case-tag">Gemini 2.5 Pro</span><span class="case-tag">GPT-4.1</span><span class="case-tag">Claude 3.5 Sonnet</span><span class="case-tag">Airtable</span><span class="case-tag">Multi-model AI</span></div>
         </div>
       </div>
@@ -385,8 +387,8 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
         </div>
         <div class="case-body">
           <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>As the organization grew, the way work actually happened became harder to see. Each department had developed its own way of doing things. Handoffs were unclear, and dependencies were invisible. There was no unified view of how work flowed, making it hard to spot risks before they became problems.</p></div></div>
-          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>I led a structured, company-wide improvement initiative — sitting with process owners, mapping how work actually happens, identifying gaps and bottlenecks, and developing ready-to-implement plans for each department. Not everything needed automation. Some fixes were redesigns, guardrails, or clearer handoffs. I also coordinated an external consultant engagement with full knowledge transfer back internally.</p></div></div>
-          <div><p class="case-body-label">The result</p><div class="case-body-text"><p>A clear, documented picture of operations across all departments. Process owners know what they own. Previously invisible bottlenecks surfaced. Each department has an actionable improvement plan.</p></div></div>
+          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>I led a structured, company-wide improvement initiative: sitting with process owners, mapping how work actually happens, identifying gaps and bottlenecks, and developing a concrete improvement plan for each department. Not everything needed automation. Some fixes were redesigns, guardrails, or clearer handoffs. I also coordinated an external consultant engagement with full knowledge transfer back internally.</p></div></div>
+          <div><p class="case-body-label">The result</p><div class="case-body-text"><p>A clear, documented picture of operations across all departments. Process owners know what they own. Bottlenecks that had been invisible for a long time are now on the table. Each department has a concrete plan it can act on.</p></div></div>
           <div class="case-tags"><span class="case-tag">Process mapping</span><span class="case-tag">SOP development</span><span class="case-tag">Lean Six Sigma</span><span class="case-tag">ClickUp</span><span class="case-tag">Project management</span></div>
         </div>
       </div>
@@ -401,8 +403,8 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
           <div class="case-icon">+</div>
         </div>
         <div class="case-body">
-          <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>A global pharmaceutical supply chain had grown complex. Processes were documented inconsistently with no unified end-to-end picture. In a regulated environment, that isn't just an efficiency problem — it's a compliance risk.</p></div></div>
-          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>Embedded in the team, I worked with subject matter experts to map end-to-end operations, then led the reconstruction of the division's SOPs — identifying inconsistencies, redundancies, and gaps across the full documentation body. I also led the process analysis workstream of a Lean Six Sigma project targeting a high-volume governing SOP.</p></div></div>
+          <div><p class="case-body-label">The situation</p><div class="case-body-text"><p>A global pharmaceutical supply chain had grown complex. Processes were documented inconsistently with no unified end-to-end picture. In a regulated environment, that isn't just an efficiency problem. It's a compliance risk.</p></div></div>
+          <div><p class="case-body-label">What I did</p><div class="case-body-text"><p>Embedded in the team, I worked with subject matter experts to map end-to-end operations, then led the reconstruction of the division's SOPs, identifying inconsistencies, redundancies, and gaps across the full documentation body. I also led the process analysis workstream of a Lean Six Sigma project targeting a high-volume governing SOP.</p></div></div>
           <div><p class="case-body-label">The result</p><div class="case-body-text"><p>A cleaner, consistent set of SOPs reflecting how work actually flows. Process gaps and redundancies addressed. The improvement project delivered a verified 35% reduction in turnaround time.</p></div></div>
           <div class="case-tags"><span class="case-tag">Lean Six Sigma</span><span class="case-tag">Process mapping</span><span class="case-tag">SOP development</span><span class="case-tag">Root cause analysis</span><span class="case-tag">Cross-functional facilitation</span></div>
         </div>
@@ -501,6 +503,18 @@ function toggleCase(el){el.classList.toggle('open')}
 // Nav mobile
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
 function closeNav(){document.getElementById('navLinks').classList.remove('open')}
+
+// Smooth nav scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+      closeNav();
+    }
+  });
+});
 </script>
 </body>
 </html>
