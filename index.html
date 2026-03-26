@@ -26,7 +26,7 @@
   --sans:'DM Sans',system-ui,sans-serif;
   --mono:'JetBrains Mono',monospace;
 }
-html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--navy);background:var(--navy);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* CURSOR */
@@ -51,7 +51,7 @@ nav.scrolled{background:rgba(13,17,23,0.96);backdrop-filter:blur(16px);border-bo
 .nav-links a:hover::after{width:100%}
 
 /* HERO */
-.hero{min-height:100vh;background:var(--navy);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;scroll-snap-align:start}
+.hero{min-height:100vh;background:var(--navy);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
 .hero::after{content:'';position:absolute;top:-10%;right:0;width:55%;height:120%;background:radial-gradient(ellipse at 80% 50%,rgba(232,144,154,0.1) 0%,transparent 55%);pointer-events:none}
 
@@ -226,14 +226,12 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
 }
 /* TICKER */
 .hero-ticker{position:absolute;bottom:0;left:0;right:0;z-index:3;overflow:hidden;padding:0.625rem 0;background:linear-gradient(to right,var(--navy) 0%,transparent 6%,transparent 94%,var(--navy) 100%)}
-.ticker-track{display:inline-flex;white-space:nowrap;animation:ticker 45s linear infinite;will-change:transform}
+.ticker-track{display:inline-flex;align-items:center;white-space:nowrap;animation:ticker 45s linear infinite;will-change:transform}
 .ticker-track:hover{animation-play-state:paused}
-.ticker-item{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.16);padding:0 0;display:inline-block}
-.ticker-sep{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--blush);opacity:0.45;margin:0 1.625rem;vertical-align:middle;position:relative;top:-1px;flex-shrink:0}
+.ticker-item{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.16);display:inline-block}
+.ticker-sep{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--blush);opacity:0.45;margin:0 1.625rem;flex-shrink:0}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* HERO CANVAS */
-.hero-canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
 
 .services-cta{margin-top:3.5rem;text-align:center}.btn-services-cta{display:inline-flex;align-items:center;gap:0.75rem;padding:1.1rem 2.75rem;border:1px solid rgba(232,144,154,0.4);color:rgba(255,255,255,0.7);font-family:var(--mono);font-size:0.75rem;letter-spacing:0.12em;text-decoration:none;transition:all 0.35s;position:relative;overflow:hidden}.btn-services-cta::before{content:"";position:absolute;inset:0;background:var(--blush);transform:translateX(-100%);transition:transform 0.35s}.btn-services-cta span{position:relative;z-index:1}.btn-services-cta:hover{color:white;border-color:var(--blush)}.btn-services-cta:hover::before{transform:translateX(0)}</style>
 </head>
@@ -260,7 +258,6 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
 
 <!-- HERO -->
 <div class="hero hero-full">
-  <canvas class="hero-canvas" id="heroCanvas"></canvas>
   <div class="hero-ticker">
     <div class="ticker-track">
       <span class="ticker-item">Process Improvement</span><span class="ticker-sep"></span><span class="ticker-item">AI Workflows</span><span class="ticker-sep"></span><span class="ticker-item">Automation</span><span class="ticker-sep"></span><span class="ticker-item">SOP Development</span><span class="ticker-sep"></span><span class="ticker-item">Lean Six Sigma</span><span class="ticker-sep"></span><span class="ticker-item">Operations</span><span class="ticker-sep"></span><span class="ticker-item">Process Improvement</span><span class="ticker-sep"></span><span class="ticker-item">AI Workflows</span><span class="ticker-sep"></span><span class="ticker-item">Automation</span><span class="ticker-sep"></span><span class="ticker-item">SOP Development</span><span class="ticker-sep"></span><span class="ticker-item">Lean Six Sigma</span><span class="ticker-sep"></span><span class="ticker-item">Operations</span><span class="ticker-sep"></span>
@@ -520,38 +517,6 @@ function toggleCase(el){el.classList.toggle('open')}
 // Nav mobile
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open')}
 function closeNav(){document.getElementById('navLinks').classList.remove('open')}
-
-// Hero interactive grid
-const heroEl=document.querySelector('.hero');
-const hCanvas=document.getElementById('heroCanvas');
-const hCtx=hCanvas.getContext('2d');
-let hmx=-9999,hmy=-9999,hOffX=0,hOffY=0,hTargX=0,hTargY=0;
-function resizeHCanvas(){hCanvas.width=heroEl.offsetWidth;hCanvas.height=heroEl.offsetHeight}
-function drawHGrid(){
-  const W=hCanvas.width,H=hCanvas.height;
-  hCtx.clearRect(0,0,W,H);
-  hOffX+=(hTargX-hOffX)*0.055;hOffY+=(hTargY-hOffY)*0.055;
-  const sz=64;
-  hCtx.lineWidth=1;hCtx.strokeStyle='rgba(255,255,255,0.038)';
-  for(let x=(hOffX%sz)-sz;x<W+sz;x+=sz){hCtx.beginPath();hCtx.moveTo(x,0);hCtx.lineTo(x,H);hCtx.stroke()}
-  for(let y=(hOffY%sz)-sz;y<H+sz;y+=sz){hCtx.beginPath();hCtx.moveTo(0,y);hCtx.lineTo(W,y);hCtx.stroke()}
-  const rect=heroEl.getBoundingClientRect();
-  const lx=hmx-rect.left,ly=hmy-rect.top;
-  if(lx>0&&lx<W&&ly>0&&ly<H){
-    const g=hCtx.createRadialGradient(lx,ly,0,lx,ly,220);
-    g.addColorStop(0,'rgba(232,144,154,0.11)');g.addColorStop(0.4,'rgba(232,144,154,0.04)');g.addColorStop(1,'rgba(232,144,154,0)');
-    hCtx.fillStyle=g;hCtx.beginPath();hCtx.arc(lx,ly,220,0,Math.PI*2);hCtx.fill();
-  }
-  requestAnimationFrame(drawHGrid);
-}
-document.addEventListener('mousemove',e=>{
-  hmx=e.clientX;hmy=e.clientY;
-  const rect=heroEl.getBoundingClientRect();
-  hTargX=(e.clientX-rect.left)/Math.max(rect.width,1)*18-9;
-  hTargY=(e.clientY-rect.top)/Math.max(rect.height,1)*18-9;
-});
-resizeHCanvas();drawHGrid();
-window.addEventListener('resize',resizeHCanvas);
 
 // Smooth nav scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
