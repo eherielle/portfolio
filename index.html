@@ -204,6 +204,7 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:101}
 .hamburger span{display:block;width:20px;height:1px;background:rgba(255,255,255,0.6);transition:all 0.3s}
 
+/* TABLET PORTRAIT — 900px and below */
 @media(max-width:900px){
   nav{padding:1rem 1.5rem}
   .nav-links{display:none}
@@ -223,6 +224,33 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
   .creds-grid{grid-template-columns:1fr 1fr}
   footer{padding:1.5rem;flex-direction:column;gap:0.5rem;text-align:center}
   .cursor{display:none}
+}
+
+/* PHONE — 680px and below */
+@media(max-width:680px){
+  .hero-left{padding:5rem 1.5rem 5.5rem}
+  .hero-center{padding:5rem 1.5rem 5.5rem !important}
+  .hero-name{font-size:clamp(2.5rem,9vw,3.25rem)}
+  .hero-tagline{font-size:1rem;margin-bottom:2.5rem}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:1.25rem}
+  .btn-primary{width:100%;justify-content:center}
+  .about-pullquote{padding:1.5rem 1.75rem;font-size:1.1rem}
+  .service-card{padding:2rem}
+  .services-cta{margin-top:2.5rem}
+  .btn-services-cta{width:100%;justify-content:center;font-size:0.7rem;padding:1rem 1.5rem}
+  .case-trigger{padding:1.75rem 0}
+  .case-study.open .case-body{gap:1.75rem}
+  #contact{padding:5rem 0}
+  .contact-heading{font-size:clamp(2rem,8vw,2.75rem)}
+  .contact-sub{font-size:0.95rem}
+  .hero-ticker{display:none}
+}
+
+/* SMALL PHONE — 400px and below */
+@media(max-width:400px){
+  .hero-name{font-size:clamp(2.1rem,9vw,2.5rem)}
+  #about,#services,#work,#skills,#contact{padding:4rem 0}
+  .creds-grid{grid-template-columns:1fr}
 }
 /* TICKER */
 .hero-ticker{position:absolute;bottom:0;left:0;right:0;z-index:3;overflow:hidden;padding:0.625rem 0;background:linear-gradient(to right,var(--navy) 0%,transparent 6%,transparent 94%,var(--navy) 100%)}
@@ -317,7 +345,7 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
       <div class="service-card reveal reveal-delay-2">
         <div class="service-num">03</div>
         <p class="service-name">Automation, AI workflows, and internal tools</p>
-        <p class="service-desc">When a process is ready to be automated, I build it. Workflows that run themselves, dashboards that update automatically, AI-assisted processes that help your team work faster. Not every process needs AI — but when it helps, I know how to apply it practically.</p>
+        <p class="service-desc">When a process is ready to be automated, I build it. Workflows that run themselves, dashboards that update automatically, AI-assisted processes that help your team work faster. Not every process needs AI. When it helps, I know how to apply it practically.</p>
         <p class="service-for">Good for: repetitive manual tasks, scattered data, or teams ready to scale without adding headcount.</p>
       </div>
       <div class="service-card reveal reveal-delay-3">
@@ -471,7 +499,7 @@ footer{background:var(--navy);padding:2.5rem 3rem;display:flex;justify-content:s
   <div class="inner">
 
     <h2 class="contact-heading reveal">Say <em>hello.</em></h2>
-    <p class="contact-sub reveal reveal-delay-1">If something on this page resonated with you, I'd love to hear about it. Whether you have a specific problem in mind or you're just starting to think about where to get help, feel free to reach out. No pressure, no hard sell — just a conversation.</p>
+    <p class="contact-sub reveal reveal-delay-1">If something on this page resonated with you, I'd love to hear about it. Whether you have a specific problem in mind or you're just starting to think about where to get help, feel free to reach out. No pressure, no hard sell. Just a conversation.</p>
     <a href="mailto:eherielle@gmail.com" class="contact-email reveal reveal-delay-2">eherielle@gmail.com</a>
     <a href="https://linkedin.com/in/eherielle" target="_blank" class="contact-linkedin reveal reveal-delay-3">linkedin.com/in/eherielle ↗</a>
     <p class="contact-note reveal reveal-delay-4">I typically respond within one to two business days.</p>
